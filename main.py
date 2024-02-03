@@ -1,8 +1,10 @@
 import torch
+from utils.p1_dataloader import ImageDataset
 
 print('-'*30)
 print('Now start the program')
 print('-'*30)
+
 def get_device():
     """
         Check if CUDA or mac m1 GPU is available
