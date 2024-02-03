@@ -1,3 +1,6 @@
+"""
+    Create a dataloader of p1    
+"""
 import os
 from torch.utils.data import Dataset
 
@@ -10,7 +13,8 @@ class ImageDataset(Dataset):
         self.transform = transform
         self.images = []
         self.label_names= []
-        for filename in os.listdir(directory):
+
+        for filename in os.listdir(self.directory):
             if filename.endswith(".png"):
                 label_names = filename.split('_')[0]
                 self.images.append(os.path.join(directory, filename))
@@ -23,6 +27,3 @@ class ImageDataset(Dataset):
         image = self.images[idx]
         label = self.label_names[idx]
         return image, label
-
-
-    
